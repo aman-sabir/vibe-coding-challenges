@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    google_id VARCHAR(255) UNIQUE NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    name VARCHAR(255),
+    avatar VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS links (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    url TEXT NOT NULL,
+    title TEXT,
+    summary TEXT,
+    tags TEXT[],
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
