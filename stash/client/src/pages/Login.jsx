@@ -12,7 +12,7 @@ const Login = () => {
                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem', color: 'var(--accent-primary)' }}>
                     <LayoutGrid size={48} />
                 </div>
-                <h1 className="page-title">Link Summerizer</h1>
+                <h1 className="page-title">Stash</h1>
                 <p className="page-subtitle">Save, summarize, and categorize your reading list with AI.</p>
 
                 <button className="btn btn-google" onClick={handleGoogleLogin} style={{ width: '100%', justifyContent: 'center', padding: '12px' }}>

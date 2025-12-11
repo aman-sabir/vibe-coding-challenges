@@ -58,7 +58,7 @@ const Dashboard = () => {
             <header className="header" style={{ marginBottom: '2rem', borderRadius: 'var(--radius-card)' }}>
                 <div className="logo">
                     <LayoutGrid size={24} className="logo-icon" />
-                    <span>Link Summerizer</span>
+                    <span>Stash</span>
                 </div>
                 <button className="btn btn-google" onClick={() => window.location.href = 'http://localhost:3000/auth/logout'}>
                     Sign Out
