@@ -13,9 +13,7 @@ export default function Home({ user, onLogout }) {
     const fetchTodos = async () => {
         try {
             const response = await fetch('http://localhost:3000/todos', {
-                headers: {
-                    'Authorization': `Bearer ${user.token}`
-                }
+                credentials: 'include'
             });
             if (response.ok) {
                 const data = await response.json();
@@ -36,9 +34,9 @@ export default function Home({ user, onLogout }) {
             const response = await fetch('http://localhost:3000/todos', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${user.token}`
+                    'Content-Type': 'application/json'
                 },
+                credentials: 'include',
                 body: JSON.stringify({ text: newTodo }),
             });
 
@@ -56,9 +54,7 @@ export default function Home({ user, onLogout }) {
         try {
             const response = await fetch(`http://localhost:3000/todos/${id}`, {
                 method: 'DELETE',
-                headers: {
-                    'Authorization': `Bearer ${user.token}`
-                }
+                credentials: 'include'
             });
 
             if (response.ok) {
@@ -76,9 +72,9 @@ export default function Home({ user, onLogout }) {
             const response = await fetch(`http://localhost:3000/todos/${id}`, {
                 method: 'PATCH',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${user.token}`
+                    'Content-Type': 'application/json'
                 },
+                credentials: 'include',
                 body: JSON.stringify({ completed: !completed }),
             });
 
